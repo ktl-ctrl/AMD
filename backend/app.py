@@ -40,8 +40,8 @@ def clean_json_response(raw_text):
         text = re.sub(r"\s*```$", "", text)
     return text.strip()
 
-@app.route('/', methods=['GET'])
-def index():
+@app.route('/api/status', methods=['GET'])
+def status():
     return jsonify({"status": "RECOVER_LOGIC backend running", "message": "Welcome to RECOVER_LOGIC AI"})
 
 @app.route('/api/analyze', methods=['POST'])
